@@ -1,10 +1,17 @@
 {
 	"manifest_version": 3,
-	"name": "Hello Extensions",
-	"description": "Base Level Extension",
+	"name": "Instagram Comment Hider",
+	"description": "Disable comments on Instagram to reduce brainrot by up to 80%!",
 	"version": "1.0",
-	"action": {
-		"default_popup": "hello.html",
-		"default_icon": "hello_extensions.png"
-	}
+	"background": {
+	"service_worker": "background.js"
+	},
+	"permissions": ["scripting", "activeTab"],
+    "content_scripts": [
+		{
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+		}
+	]
 }
+
