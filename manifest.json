@@ -3,15 +3,26 @@
 	"name": "Instagram Comment Hider",
 	"description": "Disable comments on Instagram to reduce brainrot by up to 80%!",
 	"version": "1.0",
-	"background": {
-	"service_worker": "background.js"
-	},
-	"permissions": ["scripting", "activeTab"],
-    "content_scripts": [
-		{
-		"matches": ["<all_urls>"],
-		"js": ["content.js"]
-		}
-	]
+ "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "pine.png"
+    }
+  },
+  "icons": {
+    "48": "pine.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
 }
-
